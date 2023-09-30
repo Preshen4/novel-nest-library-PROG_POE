@@ -3,12 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { ContextProvider } from './hooks/useStateContext';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark'
+  },
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThemeProvider theme={darkTheme}>
+    <ContextProvider>
+      <CssBaseline />
+      <App />
+    </ContextProvider>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
