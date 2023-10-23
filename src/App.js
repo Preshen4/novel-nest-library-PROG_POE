@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignUp from './components/Form/SignUp';
 import ReplacingBooks from './components/ReplacingBooksGame';
 import Leaderboard from './components/Leaderboard'
+import IdentifyingAreaGame from './components/IdentifyingAreaGame';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/replacingbooks' element={<ReplacingBooks />} />
+        <Route path='/identifyingarea' element={<IdentifyingAreaGame />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
         <Route path='/signup' element={<SignUp />} />
       </Routes>
