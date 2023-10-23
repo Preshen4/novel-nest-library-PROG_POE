@@ -9,7 +9,7 @@ import { MenuBook } from "@mui/icons-material";
 
 const pages = [
      { name: 'Replacing books', url: '/replacingbooks' },
-     { name: 'Identifying areas', url: '/dashboard' },
+     { name: 'Identifying areas', url: '/identifyingarea' },
      { name: 'Finding call numbers', url: '/dashboard' },
      { name: 'Leaderboard', url: '/leaderboard' },
 ];
