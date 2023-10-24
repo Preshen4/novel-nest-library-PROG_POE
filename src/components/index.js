@@ -1,11 +1,12 @@
 import axios from "axios";
 
-export const BASE_URL = 'http://localhost:5164/';
+export const BASE_URL = 'http://localhost:5164/api/';
 
 export const ENDPOINTS = {
      users: 'Users',
      replacingBookQuiz: 'ReplacingBookQuiz',
-     leaderBoard: 'Leaderboard'
+     leaderBoard: 'Leaderboard',
+     identifyingArea: 'IdentifyingArea'
 }
 
 export const createAPIEndpoint = endpoint => {
@@ -28,6 +29,11 @@ export const createAPIEndpoint = endpoint => {
                return {
                     getLeaderboard: () => axios.get(url),
                     addOrUpdateLeaderBoardEntry: newRecord => axios.post(url + 'addOrUpdateLeaderboardEntry', newRecord),
+               }
+          case ENDPOINTS.identifyingArea:
+               return {
+                    getIdentifyingAreaData: () => axios.get(url + 'generateQuiz'),
+                    checkAnswers: newRecord => axios.post(url + 'check-answers', newRecord)
                }
      }
 }
