@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { ENDPOINTS, createAPIEndpoint } from '.';
 
 // Function to shuffle an array using Fisher-Yates algorithm
+// https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
+// Author: GeeksforGeeks
 const shuffleArray = (array) => {
      for (let i = array.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
@@ -20,13 +22,13 @@ export default function FindCallNumber() {
 
      const fetchData = async () => {
           try {
-               const res = await createAPIEndpoint(ENDPOINTS.findCallNumber).quiz();
-               setQuestions(res.data);
-               setAnswerList(res.data.map((question) => question[0].CallNumber));
-               // set the question to the 3rd list in questions 
-               setQuestion(res.data[2][0].Description);
+               const response = await createAPIEndpoint(ENDPOINTS.findCallNumber).quiz();
+               setQuestions(response.data);
+               setAnswerList(response.data.map((q) => q[0].CallNumber));
+               // Set the question to the 3rd list in questions
+               setQuestion(response.data[2][0].Description);
                // Shuffle the answers for each question
-               const shuffledQuestions = res.data.map((question) => shuffleArray(question));
+               const shuffledQuestions = response.data.map((q) => shuffleArray(q));
 
                setQuestions(shuffledQuestions);
           } catch (error) {
@@ -50,7 +52,7 @@ export default function FindCallNumber() {
 
                if (currentQuestionIndex === 2) {
                     // Check if the current question is the last one
-                    alert("Well done you got the correct path");
+                    alert("Well done! You got the correct path");
                     setStreak(streak + 1);
                     restartQuiz();
                }
@@ -81,6 +83,12 @@ export default function FindCallNumber() {
                          }}
                          style={{ display: 'block', width: '600px', marginBottom: '10px' }}
                     >
+                         {
+                              /*
+                                   https://www.w3schools.com/jsref/jsref_map.asp
+                                   Author: W3Schools
+                              */
+                         }
                          {answer.CallNumber} {currentQuestionIndex === 2 ? "" : answer.Description}
                     </button>
                ))}
