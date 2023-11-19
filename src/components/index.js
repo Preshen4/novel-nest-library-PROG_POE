@@ -6,7 +6,8 @@ export const ENDPOINTS = {
      users: 'Users',
      replacingBookQuiz: 'ReplacingBookQuiz',
      leaderBoard: 'Leaderboard',
-     identifyingArea: 'IdentifyingArea'
+     identifyingArea: 'IdentifyingArea',
+     findCallNumber: 'FindCallNumber'
 }
 
 export const createAPIEndpoint = endpoint => {
@@ -34,6 +35,11 @@ export const createAPIEndpoint = endpoint => {
                return {
                     getIdentifyingAreaData: () => axios.get(url + 'generateQuiz'),
                     checkAnswers: newRecord => axios.post(url + 'check-answers', newRecord)
+               }
+          case ENDPOINTS.findCallNumber:
+               return {
+                    createTree: () => axios.get(url + 'CreateTree'),
+                    quiz: () => axios.get(url + 'Quiz')   
                }
      }
 }
