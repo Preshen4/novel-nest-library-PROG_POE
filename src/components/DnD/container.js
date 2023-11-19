@@ -6,7 +6,9 @@ import {
 } from "@dnd-kit/sortable";
 
 import SortableItem from "./sortable_item";
-
+// Drag and drop 
+// https://codesandbox.io/s/react-beautiful-dnd-board-base-0dv9b
+// Author: Michael Miller
 const containerStyle = {
      background: "#dadada",
      minWidth: '300px',

@@ -1,7 +1,9 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-
+// Drag and drop 
+// https://codesandbox.io/s/react-beautiful-dnd-board-base-0dv9b
+// Author: Michael Miller
 export function Item(props) {
      const { id } = props;
 
