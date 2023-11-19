@@ -6,6 +6,7 @@ import SignUp from './components/Form/SignUp';
 import ReplacingBooks from './components/ReplacingBooksGame';
 import Leaderboard from './components/Leaderboard'
 import IdentifyingAreaGame from './components/IdentifyingAreaGame';
+import FindCallNumberGame from './components/FindCallNumberGame';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/replacingbooks' element={<ReplacingBooks />} />
         <Route path='/identifyingarea' element={<IdentifyingAreaGame />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
+        <Route path='/findcallnumber' element={<FindCallNumberGame />} />
         <Route path='/signup' element={<SignUp />} />
       </Routes>
     </BrowserRouter>
